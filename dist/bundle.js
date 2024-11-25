@@ -179,9 +179,7 @@ function form() {
         input.setAttribute('placeholder', 'Text');
       });
       input.addEventListener('blur', function () {
-        if (!input.value) {
-          input.setAttribute('placeholder', '');
-        }
+        input.setAttribute('placeholder', '');
       });
     });
     formName.oninput = function () {

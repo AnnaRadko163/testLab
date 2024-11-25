@@ -88,9 +88,8 @@ function form() {
       });
     
       input.addEventListener('blur', function() {
-        if (!input.value) {
-          input.setAttribute('placeholder', '');
-        }
+        input.setAttribute('placeholder', '');
+
       });
     })
     
