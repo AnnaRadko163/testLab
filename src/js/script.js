@@ -10,13 +10,4 @@ window.addEventListener('DOMContentLoaded', () => {
   slider()
   questions()
   form()
-  window.onload = function () {
-    window.setTimeout(function () {
-      document.body.classList.add('loaded_hiding');
-      window.setTimeout(function () {
-        document.body.classList.add('loaded');
-        document.body.classList.remove('loaded_hiding');
-      }, 0);
-    }, 300);
-  };
 })
