@@ -1,0 +1,28 @@
+.btn
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  position: relative
+  z-index: 1
+  -webkit-transition-property: color ease-out, background-color ease-out
+  transition-property: color ease-out, background-color ease-out
+  -webkit-transition-duration: .2s, .3s, .2s
+  transition-duration: .2s, .3s, .2s
+  -webkit-transition-delay: 0s, 0s, .1s
+  transition-delay: 0s, 0s, .1s
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  overflow: hidden
+  padding: 20px 40px
+  border-radius: 4px
+  &_blue
+    background-color: var(--primary)
+    color: var(--white)
+  &_gray
+    background-color: var(--light-gray)
+    color: var(--text)
+    border: 1px solid var(--mid-grey)

@@ -1,0 +1,172 @@
+.form
+  &__block
+    padding: 80px 0
+  &__title
+    text-align: center
+    padding: 0 0 45px
+  &__wrapper
+    max-width: 800px
+    width: 100%
+    margin: 0 auto
+  &__input-box
+    display: flex 
+    height: 64px
+    gap: 32px
+  &__checkbox_input
+    -webkit-transform: scale(1.5)  
+    transform: scale(1.5)
+    opacity: 0.9
+    cursor: pointer
+  &__control
+    background: var(--extralight-gray)
+    border: 2px solid var(--extralight-gray)
+    position: relative
+    border-radius: 4px
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
+  border: none
+  -webkit-box-shadow: 0 0 0 1000px var(--extralight-gray) inset
+  box-shadow: 0 0 0 1000px var(--extralight-gray) inset
+
+.form .form__control .form__input
+  background: transparent
+  border: 0
+  outline: none
+  font-size: 20px
+  padding: 0 16px 4px
+  margin: 0 50px 0 0
+
+  + .label
+    user-select: none
+    cursor: text
+    transition: all 0.3s ease
+    position: absolute
+    top: 16px
+    left: 16px
+    font-size: 18px
+    font-weight: 400
+    line-height: 32px
+    color: var(--dark-gray)
+
+  &:focus 
+    background-color: var(--white)
+
+  &:focus + .label
+    font-size: 16px
+    top: 8px
+    left: 16px
+    color: var(--gray)
+    font-size: 14px
+    line-height: 24px
+
+  &:valid + .label
+    font-size: 16px
+    top: 8px
+    left: 16px
+    color: var(--gray)
+    font-size: 14px
+    line-height: 24px
+.form__control:has(.form__input:focus) 
+  background-color: var(--white)
+
+
+input.form__input
+  &::placeholder
+    visibility: hidden
+    color: var(--mid-grey)
+  &:focus::placeholder
+    visibility: visible
+
+.form__checkbox_text.error
+  color: var(--dangerous)
+
+.form
+  &__control
+    display: flex
+    width: 100%
+    flex-direction: column-reverse
+    position: relative
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    overflow: hidden
+  &__error
+    display: none
+    height: 12px
+    margin: 5px 0 0
+    position: absolute
+    bottom: -15px
+    left: 0
+    color: var(--dangerous)
+  &.error .form__error
+    display: block
+  &__counter
+    display: none
+    height: 12px
+    margin: 5px 0 0
+    position: absolute
+    bottom: 0
+    right: 0
+  &__input
+    display: flex
+    margin: 1px 1px 0
+    border: none
+    border-radius: 10px
+    background-color: var(--bg-gray)
+    border: 1px solid transparent
+    position: relative
+    z-index: 2
+  &__input:focus
+    max-height: 500px
+    box-shadow: 0 0 0 1000px var(--white) inset
+  &__buttons
+    display: flex
+    width: 100%
+    padding: 30px 0 0
+    margin: 0 0 0 auto
+    align-items: center
+    gap: 32px
+  &__checkbox
+    display: flex
+    width: 50%
+    gap: 10px
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+  &__btn-box 
+    width: 50%
+    .btn
+      width: 100%
+  &__submit
+    display: none
+    color: var(--green-success)
+  &__submit.active
+    display: block
+
+.icon_success, 
+.icon_error
+  display: none
+  position: absolute
+  top: 50%
+  right: 22px
+  -webkit-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+.form__control.error
+  overflow: visible
+  
+.form__control
+  &.error
+    border: 2px solid var(--dangerous)
+    .icon_error
+      display: block
+  &.success
+    border: 2px solid var(--extralight-gray)
+    .icon_success
+      display: block

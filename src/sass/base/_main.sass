@@ -1,0 +1,165 @@
+*
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+  &::-moz-selection, &::selection
+    background-color: var(--bg)
+    color: var(--black)
+
+input
+  outline: none
+
+textarea
+  outline: none
+  resize: none
+
+label
+  cursor: pointer
+
+input
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    display: none
+    -webkit-appearance: none
+    appearance: none
+    margin: 0
+
+*::marker
+  font-size: 0
+
+\::-webkit-scrollbar
+  width: 10px
+  background: var(--bg)
+
+\::-webkit-scrollbar-thumb
+  width: 10px
+  background-color: var(--dark-gray)
+
+  &:hover
+    background-color: var(--hover)
+
+/* Для Firefox
+
+.scrollable
+  scrollbar-width: thin
+  scrollbar-color: var(--dark-gray) transparent
+
+  &:hover
+    scrollbar-color: var(--hover) transparent
+
+html
+  height: 100vh
+  scroll-behavior: smooth
+  overflow-x: hidden
+  overflow-y: scroll
+
+  &.noscroll
+    height: 100vh
+    overflow: hidden
+
+body
+  position: relative
+  height: 100%
+  font-family: var(--text-font)
+  color: var(--text)
+  -webkit-tap-highlight-color: transparent
+  background-color: var(--bg)
+
+button
+  padding: 0
+  margin: 0
+  background: transparent
+  -webkit-transition: color 0.15s linear, background-color 0.15s linear
+  transition: color 0.15s linear, background-color 0.15s linear
+  cursor: pointer
+
+.main
+  display: flex
+  min-height: 100vh
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column
+  opacity: 0
+  -webkit-transition: opacity 0.3s linear
+  transition: opacity 0.3s linear
+
+body.loaded .main
+  opacity: 1
+
+img
+  pointer-events: none
+
+form, img
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+button
+  outline: 0
+  border: none
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  user-select: none
+
+  &:hover
+    outline: 0
+    border: none
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    user-select: none
+
+a
+  color: var(--text)
+  -webkit-transition: color 0.15s linear
+  transition: color 0.15s linear
+  text-decoration: none
+  cursor: pointer
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+  &:hover
+    text-decoration: underline
+
+ul, p, div, a, h1, h2, h3, h4, h5, h6
+  margin: 0
+  padding: 0
+
+section
+  margin: -1px 0 0
+  padding: 1px 0 0
+  position: relative
+  z-index: 1
+  pointer-events: all
+  background-color: var(--bg)
+
+.container
+  width: 100%
+  max-width: 1300px
+  padding: 0 40px
+  margin: 0 auto
+  position: relative
+
+.top
+  height: 60px
+  width: 100%
+  background-color: transparent
+  overflow: hidden
+
+/* bitrix
+
+.container::after
+  display: none
+
+/* bitrix
+
+
+.hidden
+  display: none

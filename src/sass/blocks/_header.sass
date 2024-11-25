@@ -1,0 +1,142 @@
+.header
+  width: 100%
+  position: absolute
+  z-index: 100
+  &__block
+    display: flex
+    height: 80px
+    justify-content: space-between
+    align-items: center
+  &__burger
+    display: none
+  &__nav_list
+    display: flex
+    gap: 24px
+  &__image svg path
+    fill: var(--bg)
+    transition: all 2s
+  &.active .header__image svg path
+    fill: var(--black)
+  &__popup.active
+    z-index: 1
+    opacity: 1
+    visibility: visible
+    -webkit-transform: scaleY(1)
+    transform: scaleY(1)
+  &__popup_container
+    padding: 0 90px
+
+  &__burger
+    display: none
+    width: 60px
+    height: 60px
+    padding: 20px
+    align-items: center
+    justify-content: center
+    gap: 10px
+  &__links
+    display: flex
+    align-items: center
+    gap: 50px
+    position: relative
+  &__links_left
+    display: flex
+    align-items: center
+    gap: 24px
+  &__link
+    display: flex
+    width: 32px
+    height: 32px
+    svg
+      width: 100%
+      height: 100%
+      object-fit: contain
+  &__links_button svg
+    width: 15px
+    height: 19px
+    object-fit: contain
+  &__link_cart
+    position: relative
+  &__link_cart_circle
+    width: 11px
+    height: 11px
+    border-radius: 50%
+    background: #FF2F2F
+    position: absolute
+    right: 2px
+    bottom: 2px
+    opacity: 0
+    -webkit-transition: opacity 1s
+    transition: opacity 1s
+
+    &.active
+      width: 11px
+      height: 11px
+      border-radius: 50%
+      background: #FF2F2F
+      position: absolute
+      right: 2px
+      bottom: 2px
+      opacity: 1
+  &__burger_flex
+    display: flex
+    width: 20px
+    height: 20px
+    position: relative
+    span
+      &:nth-child(1), &:nth-child(2)
+        width: 100%
+        height: 2px
+        position: absolute
+        left: 0
+        background-color: var(--bg)
+        -webkit-transform: translateX(0) translateY(0) rotate(0)
+        transform: translateX(0) translateY(0) rotate(0)
+
+      &:nth-child(1)
+        top: 2px
+        -webkit-transition: -webkit-transform 0.4s, background-color 0.2s linear
+        transition: transform 0.4s, background-color 0.2s linear
+        -webkit-transition-delay: 0.2s, 0s
+        transition-delay: 0.2s, 0s
+
+      &:nth-child(2)
+        top: 8.75px
+        opacity: 1
+        -webkit-transition: -webkit-transform 0s, opacity 0s, background-color 0.2s linear
+        transition: transform 0s, opacity 0s, background-color 0.2s linear
+        -webkit-transition-delay: 0.3s, 0.3s, 0s
+        transition-delay: 0.3s, 0.3s, 0s
+  &__nav_link.active
+    color: #909090
+
+.burger_popup
+  display: none
+
+.header__burger.active .header__burger_flex span:nth-child(1), .header__transparent .header__burger.active .header__burger_flex span:nth-child(1)
+  -webkit-transform: translateX(0px) translateY(7.25px) rotate(45deg)
+  transform: translateX(0px) translateY(7.25px) rotate(45deg)
+  -webkit-transition: -webkit-transform 0.4s, background-color 0.2s linear
+  transition: transform 0.4s, background-color 0.2s linear
+  background-color: var(--black)
+
+.header__burger.active .header__burger_flex span:nth-child(2), .header__transparent .header__burger.active .header__burger_flex span:nth-child(2)
+  -webkit-transform: translateX(0px) translateY(0) rotate(-45deg)
+  transform: translateX(0px) translateY(0) rotate(-45deg)
+  -webkit-transition: -webkit-transform 0.4s, background-color 0.2s linear
+  transition: transform 0.4s, background-color 0.2s linear
+  background-color: var(--black)
+
+a.header__nav_link
+  padding: 20px 0
+  color: var(--white)
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,254 @@
+@mixin headline_1
+  font-size: 52px
+  line-height: 64px
+
+@mixin headline_2
+  font-size: 40px
+  line-height: 56px
+  letter-spacing: -0.02em
+
+@mixin headline_3
+  font-size: 32px
+  line-height: 40px
+
+@mixin headline_4
+  font-size: 24px
+  line-height: 32px
+
+@mixin headline_5
+  font-size: 20px
+  line-height: 24px
+
+@mixin headline_6
+  font-size: 16px
+  line-height: 24px
+
+@mixin сaption
+  font-size: 12px
+  line-height: 24px
+  letter-spacing: 0.12em
+
+@mixin body_18
+  font-size: 18px
+  line-height: 32px
+
+
+@mixin body_16
+  font-size: 16px
+  line-height: 28px
+
+
+@mixin body_14
+  font-size: 14px
+  line-height: 24px
+
+
+@mixin body_12
+  font-size: 12px
+  line-height: 16px
+
+
+@media (min-width: 1280px)
+  .btn_blue
+    &:hover 
+      background-color: var(--hover)
+  .btn_gray
+    &:hover 
+      background-color: var(--white)
+      border: 1px solid var(--mid-grey)
+
+@media (maw-width: 1280px)
+  .btn_gray 
+    border: none
+    
+@media (max-width: 1250px) 
+  .reviews-slider
+    &__pagination
+      display: none
+    &__box 
+      margin: 0
+  .reviews-slide 
+    width: calc(50% - 37px)
+  
+  
+  
+@media (max-width: 1023px)
+  .container
+    padding: 0 20px
+
+  .header__burger
+    display: block
+  .header__navigation
+    display: none
+
+  .burger_popup
+    display: flex
+    width: 100%
+    height: 100vh
+    position: fixed
+    top: 0
+    right: 0
+    z-index: 99
+    background-color: var(--bg)
+    opacity: 0
+    -webkit-transition: visibility 0s linear 1.4s, -webkit-transform 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s, opacity 0s linear 1.4s, top 0s linear 1.4s
+    transition: visibility 0s linear 1.4s, transform 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s, opacity 0s linear 1.4s, top 0s linear 1.4s
+    -webkit-transform: translateX(-100%)
+    transform: translateX(-100%)
+    overflow: hidden
+
+    &.active
+      opacity: 1
+      -webkit-transition: visibility 0s linear 0s, -webkit-transform 1.1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s, top 0s linear 0.2s
+      transition: visibility 0s linear 0s, transform 1.1s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.2s linear 0s, top 0s linear 0.2s
+      -webkit-transform: translateX(0)
+      transform: translateX(0)
+
+  .burger_popup__block
+    height: 100vh
+    padding: 80px 0 20px
+    overflow-x: hidden
+    overflow-y: scroll
+
+    &::-webkit-scrollbar, &::-webkit-scrollbar-thumb
+      display: none
+      width: 0px
+
+  .burger_popup__login
+    display: flex
+    align-items: center
+    gap: 6px
+    color: var(--white)
+    text-transform: uppercase
+    text-align: left
+
+    svg
+      display: flex
+      width: 45px
+      height: 45px
+      object-fit: contain
+
+  .burger_popup__list, 
+  .burger_popup__profile_list
+    display: flex
+    flex-direction: column
+
+  .burger_popup__list
+    border-top: 1px solid #FFFFFF33
+  .burger_popup__item 
+    height: 64px
+    border-top: 1px solid var(--light-gray)
+    &:last-child
+      border-bottom: 1px solid var(--light-gray)
+  .burger_popup__link 
+    display: flex
+    height: 100%
+    align-items: center
+    justify-content: space-between
+
+  .burger_popup__profile_list
+    padding: 36px 0 0
+
+  .home
+    &__title 
+      @include headline_3
+    &__subtitle
+      @include body_16
+    &__subtitle 
+      margin: 17px 0 40px
+  .work
+    &__block 
+      padding: 55px 0
+    &__wrapper 
+      padding: 40px 0 0
+      gap: 32px
+      flex-wrap: wrap
+    &-item 
+      width: calc(50% - 16px)
+    &-item__img 
+      img
+        width: 56px
+        height: 56px
+  .loans
+    &__block 
+      padding: 0 0 55px
+      gap: 29px
+    &__title 
+      @include headline_5
+    &__subtitle 
+      padding: 15px 0 0
+  .reviews
+    &__block 
+      padding: 33px 0 45px
+    &-slider__list 
+      padding: 17px 0
+  .questions
+    &__block 
+      padding: 55px 0
+  .respondents
+    &__block 
+      gap: 20px
+      padding: 20px 0
+    &__box 
+      width: 100%
+  .form
+    &__block 
+      padding: 55px 0
+    &__title 
+      padding: 0 0 32px
+    &__input-box 
+      gap: 20px
+
+
+@media (max-width: 768px) 
+  .container 
+    padding: 0 16px
+  
+  .home__subtitle 
+    margin: 10px 0 26px
+
+  .home__title,
+  .work__title,
+  .reviews__title,
+  .questions__title,
+  .form__title 
+    @include headline_4
+
+  .work
+    &__wrapper 
+      padding: 25px 0 0
+    &-item 
+      width: 100%
+      display: flex
+      gap: 16px
+      &__img 
+        padding: 0
+  .loans
+    &__block 
+      flex-direction: column
+      gap: 7px
+    &__text, 
+    &__img 
+      width:100%
+    &__text
+      order: 2
+      text-align: center
+    &__img 
+      order: 1
+  .reviews-slide 
+    width: calc(100% - 37px)
+  .questions__item_text 
+    p
+      @include body_16
+  .form
+    &__input-box 
+      flex-direction: column
+      height: auto
+      gap: 20px
+    &__control 
+      height: 64px
+    &__buttons 
+      flex-direction: column
+    &__checkbox,
+    &__btn-box
+      width: 100%
