@@ -78,7 +78,22 @@ function form() {
     const formBtn = document.getElementById('form__btn');
     const formControl = document.querySelectorAll('.form__control');
     const formSubmit= document.querySelector('.form__submit');
+    const formInput = document.querySelectorAll('.form__input');
+    
+    formInput.forEach(input => {
+      input.setAttribute('placeholder', '');
 
+      input.addEventListener('focus', function() {
+        input.setAttribute('placeholder', 'Text');
+      });
+    
+      input.addEventListener('blur', function() {
+        if (!input.value) {
+          input.setAttribute('placeholder', '');
+        }
+      });
+    })
+    
     formName.oninput = function(){
       this.value = this.value.substr(0, formNameMax);
       this.value = this.value.replace(/[0-9]/g, '');
