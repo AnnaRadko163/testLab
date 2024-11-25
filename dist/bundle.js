@@ -172,17 +172,12 @@ function form() {
     const formBtn = document.getElementById('form__btn');
     const formControl = document.querySelectorAll('.form__control');
     const formSubmit = document.querySelector('.form__submit');
-    const formInput = document.querySelectorAll('form__input');
-    // Скрыть placeholder по умолчанию
+    const formInput = document.querySelectorAll('.form__input');
     formInput.forEach(input => {
       input.setAttribute('placeholder', '');
-
-      // Показать placeholder при фокусе
       input.addEventListener('focus', function () {
         input.setAttribute('placeholder', 'Text');
       });
-
-      // Скрыть placeholder, когда поле теряет фокус, если оно пустое
       input.addEventListener('blur', function () {
         if (!input.value) {
           input.setAttribute('placeholder', '');
@@ -9995,7 +9990,7 @@ var code = `<!DOCTYPE html>
           <form action="" class="form__wrapper" id="form">
             <div class="form__input-box">
               <div class=" form__control">
-                <input type="text" class="form__input" minl="2" maxl="40" id="form__name" placeholder="Text" required>
+                <input type="text" class="form__input" minl="2" maxl="40" id="form__name"  required>
                 <label for="form__name" class="label">Имя</label>
                 <small class="form__counter"><span class="form__counter_min">0</span></small>
                 <small class="form__error">Введите ваше имя</small>
@@ -10016,7 +10011,7 @@ var code = `<!DOCTYPE html>
               </div>
               <div class="form__control">
                 <input data-phone-pattern type="text" class="form__input" minl="4" maxl="40" id="form__phone"
-                  placeholder="Text" required>
+                   required>
                 <label for="form__phone" class="label">Телефон</label>
                 <small class="form__counter"><span class="form__counter_min">0</span></small>
                 <small class="form__error">Введите корректный номер</small>
