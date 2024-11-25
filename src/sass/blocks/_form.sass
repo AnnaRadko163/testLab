@@ -93,6 +93,8 @@ input.form__input
     -ms-user-select: none
     user-select: none
     overflow: hidden
+    &.error .form__error
+      display: block
   &__error
     display: none
     height: 12px
@@ -101,8 +103,6 @@ input.form__input
     bottom: -15px
     left: 0
     color: var(--dangerous)
-  &.error .form__error
-    display: block
   &__counter
     display: none
     height: 12px
